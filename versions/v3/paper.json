@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 109476,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "53b1f2b474c50cd8947bffb22c7b7e280983106ac8a653ef202a851ff91f0cd1",
+      "sha256": "53b1f2b474c50cd8947bffb22c7b7e280983106ac8a653ef202a851ff91f0cd1"
+    },
+    "source": {
+      "bytes": 18301,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "4293f49a214fa1255fdd4e4f989d0b9ff8de24c0ef2208c824b85cbe874eaee2",
+      "sha256": "4293f49a214fa1255fdd4e4f989d0b9ff8de24c0ef2208c824b85cbe874eaee2"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We give alternative proofs of Jamie Morken's two conjectures in OEIS A112399, revision 41, FORMULA (18 September 2026), following the finite coprimality identity of Sander and Sander (2009) and equivalent identities of Ramaré (2014–2015). Both coprime Möbius sum identities hold with an arbitrary nonnegative integer cutoff. Complete finite derivations cover the A400203 triangle, the rectangular A372700 identity, and nearby divisor and gcd transforms, with their earlier proofs and formula records distinguished. We correct the strict endpoint in A304575's name and the signed-variant convention in A112526. The product identity is reproved with credit to Bala (2026).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 3,
+    "doi": null,
+    "lean_source": {
+      "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 109476,
+      "sha256": "53b1f2b474c50cd8947bffb22c7b7e280983106ac8a653ef202a851ff91f0cd1",
+      "url": "/api/v1/collected-papers/oeis-a112399-morken-first-divisor-sum/files/pdf?version=3"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-22T10:45:10.458178479Z",
+    "record": "oeis-a112399-morken-first-divisor-sum",
+    "repository_name": "oeis-a112399-morken-first-divisor-sum",
+    "source": {
+      "bytes": 18301,
+      "sha256": "4293f49a214fa1255fdd4e4f989d0b9ff8de24c0ef2208c824b85cbe874eaee2",
+      "url": "/api/v1/collected-papers/oeis-a112399-morken-first-divisor-sum/files/source?version=3"
+    },
+    "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-22T10:45:10.458178479Z",
+        "revision": "3",
+        "version": 3
+      }
+    ],
+    "work": "oeis-a112399-morken-first-divisor-sum"
+  }
+}

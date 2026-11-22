@@ -1,0 +1,15 @@
+{
+  "id": "oeis-a112399-morken-first-divisor-sum",
+  "revision": 3,
+  "problem_ids": ["oeis-a112399-morken-first-divisor-sum"],
+  "topic": "Morken's two conjectures in OEIS A112399, revision 41, FORMULA",
+  "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We give alternative proofs of Jamie Morken's two conjectures in OEIS A112399, revision 41, FORMULA (18 September 2026), following the finite coprimality identity of Sander and Sander (2009) and equivalent identities of Ramaré (2014–2015). Both coprime Möbius sum identities hold with an arbitrary nonnegative integer cutoff. Complete finite derivations cover the A400203 triangle, the rectangular A372700 identity, and nearby divisor and gcd transforms, with their earlier proofs and formula records distinguished. We correct the strict endpoint in A304575's name and the signed-variant convention in A112526. The product identity is reproved with credit to Bala (2026).",
+  "summary": "For n>=1 and X>=0, C_n(X)=sum_{d|n,mu(d)!=0} C_d(floor(X/d))=sum_{q<=X,rad(q)|n} M(floor(X/q)). These identities have earlier proofs in equivalent or general form in Sander–Sander (2009) and Ramaré (2014–2015), with later coefficient proofs and formula records credited separately. The self-contained proofs cover all finite A400203 formulas and its three recorded triangle specializations, the rectangular A372700 identity, arbitrary-function divisor grouping, squarefree-count and gcd transforms, and two convention corrections. Pinned Lean declarations prove the first equality for X=n>0 and the coefficient identity underlying the second; the other statements have written proofs and exact finite checks. A372700's infinite-sign-change conjecture is outside coverage.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+}

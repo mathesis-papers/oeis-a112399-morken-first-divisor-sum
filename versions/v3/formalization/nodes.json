@@ -1,0 +1,455 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s1",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For every integer $n\\geq1$ and every integer $X\\geq0$,\n\\begin{align}\n \\C_n(X)\n &=\\sum_{\\substack{d\\mid n\\\\\\mob(d)\\ne0}}\n       \\C_d(\\lfloor X/d\\rfloor),\\\\\n \\C_n(X)\n &=\\sum_{\\substack{1\\leq q\\leq X\\\\\\rad(q)\\mid n}}\n       M(\\lfloor X/q\\rfloor).\n\\end{align}\nAll divisors and summation indices are positive.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s10",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s10",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s10",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For $n\\geq1$ and any arithmetic function $F$,\n\\begin{align}\n \\sum_{k=1}^{n}F((k,n))&=\\sum_{d\\mid n}F(d)\\varphi(n/d),\\\\\n \\sum_{k=1}^{n}F(n/(k,n))&=\\sum_{d\\mid n}F(d)\\varphi(d).\n\\end{align}\nThus the finite gcd formulas of A007431, A063659 and A276833\n\\cite{a007431,a063659,a276833} follow, with local factors\n\\begin{align*}\n \\mathrm{A007431}(p^e)&=\n \\begin{cases}p-2,&e=1,\\\\p^{e-2}(p-1)^2,&e\\geq2,\\end{cases}\\\\\n \\mathrm{A063659}(p^e)&=\n \\begin{cases}p,&e=1,\\\\p^e-p^{e-2},&e\\geq2,\\end{cases}\n \\qquad\n \\mathrm{A276833}(n)=\\prod_{p\\mid n}(2-p).\n\\end{align*}\nIn addition $\\sum_{d\\mid n}\\mathrm{A007431}(d)=\\varphi(n)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s11",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s11",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s11",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For every $n\\geq1$, with $U$ as in Corollary~\\ref{cor:triangle},\n\\[\n a(n)=U(n^2,n)\n =\\sum_{\\substack{d\\mid n\\\\\\mob(d)\\ne0}}U(n,d),\n \\qquad\n \\mathrm{A372706}(n)=\\mob(n)U(n^2,n).\n\\]\nThese are the three formulas in A400203's history, revision 4,\n21 September 2026 \\cite{a400203}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s2",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For a multiplicative arithmetic function $f$, $n\\geq1$ and $X\\geq0$,\n\\[\n \\sum_{k=1}^{X}\\mob(nk)f(nk)\n =\\mob(n)f(n)\\sum_{\\substack{k\\leq X\\\\(k,n)=1}}\\mob(k)f(k).\n\\]\nIn particular,\n\\begin{equation}\n \\sum_{1\\leq k\\leq X}\\mob(nk)=\\mob(n)\\C_n(X).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s3",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For integers $X,Y\\geq0$,\n\\begin{equation}\n \\sum_{j=1}^{X}\\sum_{k=1}^{Y}\\mob(jk)\n =\\sum_{d=1}^{\\min(X,Y)}\\mob(d)\n   \\C_d(\\lfloor X/d\\rfloor)\\C_d(\\lfloor Y/d\\rfloor).\n\\end{equation}\nThus, for $T(N)=\\sum_{j,k=1}^{N}\\mob(jk)$ (A372700 \\cite{a372700}),\n\\begin{equation}\n T(N)=\\sum_{d=1}^{N}\\mob(d)\\C_d(\\lfloor N/d\\rfloor)^2\n \\qquad(N\\geq1).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s4",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For $N\\geq1$,\n\\begin{equation}\n T(N)=-1+2\\sum_{k=1}^{N}\\mob(k)a(k).\n\\end{equation}\nIn particular $T(N)=T(N-1)$ when $N$ is nonsquarefree.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s5",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "Let $U(N,d)=\\C_d(\\lfloor N/d\\rfloor)$ for $1\\leq d\\leq N$,\nthe triangle A400203, revision 17, FORMULA \\cite{a400203}.\nThen\n\\begin{equation}\n U(N,d)=\\sum_{\\substack{q\\leq N/d\\\\\\rad(q)\\mid d}}\n                  M(\\lfloor N/(dq)\\rfloor).\n\\end{equation}\nIts boundary and plateau formulas are\n\\[\n U(N,1)=M(N),\\quad U(N,d)=1\\ (2d>N),\\quad\n U(N,d)=U(d\\lfloor N/d\\rfloor,d).\n\\]\nFor $1\\leq d<N$, its increment is $\\mob(N/d)$ when\n$d\\mid N$ and $(N/d,d)=1$, and zero otherwise.\nWriting $H(k)=1$ if every prime exponent of $k$ is at least two,\nand $H(k)=0$ otherwise, with $H(1)=1$, gives\n\\begin{align}\n \\sum_{d=1}^{N}U(N,d)&=\\sum_{k=1}^{N}H(k)\n                         =\\mathrm{A217038}(N+1),\\\\\n \\sum_{d=1}^{N}\\mob(d)U(N,d)&=\\sum_{k=1}^{N}\\mob(k)\\tau(k)\n                         =\\mathrm{A062563}(N),\\\\\n \\sum_{d=1}^{N}\\mob(d)^2U(N,d)&=1.\n\\end{align}\nHere $H$ is A112526, $\\tau(k)$ is the number of positive divisors,\nand A217038 counts powerful numbers strictly below its argument\n\\cite{triangle-aux}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s6",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "With the powerful-number indicator $H$ above,\n$H(n)\\mob(n)=\\mathbf1_{n=1}$.\nThe multiplicative function with prime-power values zero for exponent\none and $-1$ for larger exponents is instead $H(n)\\mob(\\rad(n))$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s7",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "Let $F$ be any complex-valued function on positive integers. For $n\\geq1$\nand $X\\geq0$,\n\\begin{equation}\n \\sum_{k=1}^{X}F\\!\\left(\\frac{k}{(k,n)}\\right)\n =\\sum_{d\\mid n}\\ \\sum_{\\substack{1\\leq m\\leq\\lfloor Xd/n\\rfloor\\\\(m,d)=1}}F(m).\n\\end{equation}\nIn particular, if $A_F(d)=\\sum_{m\\leq d,(m,d)=1}F(m)$ and\n$B_F(n)=\\sum_{k\\leq n}F(k/(k,n))$, then\n\\begin{equation}\n B_F(n)=\\sum_{d\\mid n}A_F(d),\\qquad\n A_F(n)=\\sum_{d\\mid n}\\mob(n/d)B_F(d).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s8",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "For $b(n)=\\sum_{k\\leq n}\\mob(k/(k,n))$ (A332685 \\cite{a332685}),\n\\begin{equation}\n b(n)=\\sum_{d\\mid n}a(d),\\qquad\n a(n)=\\sum_{d\\mid n}\\mob(n/d)b(d).\n\\end{equation}\nAlso $b(n)=\\sum_{k\\leq n}\\mob(\\operatorname{lcm}(n,k)/n)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:oeis-a112399-morken-first-divisor-sum:3:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
+      },
+      "lineage": "collected:oeis-a112399-morken-first-divisor-sum:s9",
+      "macros": {
+        "\\C": "C",
+        "\\mob": "\\mu",
+        "\\rad": "\\operatorname{rad}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a112399-morken-first-divisor-sum",
+      "scope": "in_scope",
+      "statement": "Write $s(d)=\\sum_{k\\leq d,(k,d)=1}\\mob(k)^2$ (A073311 \\cite{a073311}).\nThe formulas and data of A304575 \\cite{a304575} give the sequence\n\\begin{equation}\n R(n)=\\sum_{d\\mid n}s(d)\n =\\sum_{k=1}^{n}\\mob\\!\\left(\\frac{k}{(k,n)}\\right)^2\n =\\sum_{k=1}^{n}\\mob\\!\\left(\\frac{\\operatorname{lcm}(n,k)}{n}\\right)^2.\n\\end{equation}\nConsequently $R(n)\\leq n$ and\n$s(n)=\\sum_{d\\mid n}\\mob(n/d)R(d)$.\nIf the strict inequality $k<d$ in that entry's NAME is read literally\nfor positive $k$, its divisor sum equals $R(n)-1$, not $R(n)$.\nFor $Q(t)=\\sum_{1\\leq k<t}\\mob(k)^2$ (A013928 \\cite{a013928}),\nevery prime $p$ and integer $m\\geq0$ satisfy\n\\begin{align}\n R(p^{2m})&=1+\\sum_{i=0}^{m}Q(p^{2i}),\\\\\n R(p^{2m+1})&=1+\\sum_{i=0}^{m}Q(p^{2i+1}).\n\\end{align}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+      "toolchain": null,
+      "version": 3,
+      "work": "oeis-a112399-morken-first-divisor-sum"
+    }
+  ]
+}

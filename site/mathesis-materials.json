@@ -1,0 +1,11 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "oeis-a112399-morken-first-divisor-sum",
+  "version": 3,
+  "repository_url": "https://github.com/mathesis-papers/oeis-a112399-morken-first-divisor-sum",
+  "site_url": "https://papers.trureturing.org/oeis-a112399-morken-first-divisor-sum/",
+  "doi": null,
+  "reading": {},
+  "slides": [],
+  "visualizations": []
+}

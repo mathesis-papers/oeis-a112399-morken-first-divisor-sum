@@ -1,0 +1,135 @@
+{
+  "a112399_first_and_second": {
+    "n": [
+      1,
+      400
+    ]
+  },
+  "a112399_reference_prefix": {
+    "n": [
+      1,
+      20
+    ],
+    "values": [
+      1,
+      1,
+      0,
+      0,
+      -1,
+      0,
+      -1,
+      -2,
+      -2,
+      -1,
+      -1,
+      -2,
+      -2,
+      -3,
+      -2,
+      -3,
+      -1,
+      -4,
+      -2,
+      -5
+    ]
+  },
+  "a332685_transforms": {
+    "n": [
+      1,
+      400
+    ]
+  },
+  "a372700_quadratic_row_and_plateau": {
+    "N": [
+      1,
+      120
+    ]
+  },
+  "a372706_product": {
+    "n": [
+      1,
+      400
+    ]
+  },
+  "a400203_all_finite_formulas": {
+    "N": [
+      1,
+      160
+    ],
+    "triangle_entries": 12880
+  },
+  "arbitrary_cutoff_first_second_product": {
+    "X": [
+      0,
+      120
+    ],
+    "n": [
+      1,
+      60
+    ],
+    "pairs": 7260
+  },
+  "arithmetic": "exact integers",
+  "checker_sha256": "a20ccc07a4ba9335b2fdbd7cd63b9cb6957cf81555ecae426b015c263cc26226",
+  "corrections": {
+    "a112526_signed_variant": {
+      "n": [
+        1,
+        200
+      ]
+    },
+    "a304575_strict_endpoint": {
+      "inclusive_minus_strict": 1,
+      "n": [
+        1,
+        200
+      ]
+    }
+  },
+  "finite_gcd_and_squarefree_transforms": {
+    "n": [
+      1,
+      200
+    ]
+  },
+  "general_cutoff_grouping": {
+    "X": [
+      0,
+      70
+    ],
+    "comparisons": 10650,
+    "functions": [
+      "mu",
+      "mu^2",
+      "m^2+(-1)^m"
+    ],
+    "n": [
+      1,
+      50
+    ]
+  },
+  "mobius_implementations": {
+    "trial_factorization_vs_sieve": [
+      1,
+      160000
+    ]
+  },
+  "prime_power_formulas": {
+    "exponent_zero": "pass",
+    "positive_exponent_cases": 60,
+    "prime_powers_at_most": 200
+  },
+  "rectangular_identity": {
+    "X": [
+      0,
+      40
+    ],
+    "Y": [
+      0,
+      40
+    ],
+    "pairs": 1681
+  },
+  "scope": "Finite checks; all-input statements have written proofs in note.tex.",
+  "status": "pass"
+}

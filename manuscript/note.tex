@@ -1,0 +1,657 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\mob}{\mu}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\C}{C}
+\title{Convention corrections and alternative proofs for\\
+Morken's conjectures in OEIS A112399\\
+\large Revision 41, FORMULA; after Sander--Sander (2009)\\
+and Ramar\'e (2014--2015)}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{4 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give alternative proofs of Jamie Morken's two conjectures in OEIS
+A112399, revision 41, FORMULA (18 September 2026), following the finite
+coprimality identity of Sander and Sander (2009) and equivalent identities
+of Ramar\'e (2014--2015) \cite{a112399,sander,ramare2014,ramare2015}.
+Both coprime M\"obius sum identities hold with an arbitrary nonnegative
+integer cutoff. Complete finite derivations cover the A400203 triangle,
+the rectangular A372700 identity, and nearby divisor and gcd transforms,
+with their earlier proofs and formula records distinguished. We correct
+the strict endpoint in A304575's name and the signed-variant convention
+in A112526. The product identity is reproved with credit to Bala (2026).
+\end{abstract}
+
+\section*{Earlier proofs and scope}
+The first identity below is a specialization of the finite coprimality
+expansion in Sander and Sander \cite[proof of Proposition 4, (5)--(7)]{sander}:
+choose the vector entries to be M\"obius values up to the cutoff and zero
+after it, in an ambient dimension at least the parameter and the cutoff.
+Ramar\'e \cite[\S1, immediately after (1.2)]{ramare2014} gives an equivalent
+reciprocal-weight identity. Taking its jump at each positive integer $r$,
+multiplying by $r$, and summing up to the cutoff gives \eqref{eq:first}.
+For the second identity, Ramar\'e's \cite[\S16, (16.1)]{ramare2015}
+squarefree-divisor and prime-supported-square decomposition becomes
+\eqref{eq:second} under the unique factorization $q=dw^2$, with $d$
+squarefree. That paper was electronically published on 1 December 2014.
+
+Ingix and reuns \cite{mse2019} give a related coefficient proof on
+13 June 2019; reuns's corrected support condition is $\rad(m)\mid a$,
+not $m\mid a$. Helfgott \cite[\S5.3.4, (5.73)]{helfgott} proves the exact
+coefficient cancellation and a weighted summation identity. The same coefficient and
+weighted identities appear in Ramar\'e--Zuniga-Alterman
+\cite[Lemma 2.5]{rz2026}, first posted on 26 March 2026, and in
+Zuniga-Alterman \cite[Lemma 7.1]{z2026}, posted on 13 October and revised
+on 26 October 2026, after the posing date. In each weighted identity,
+choosing $h(t)=t\mathbf1_{t\le X}$ makes the specialization finite.
+
+The arbitrary-function transform at the diagonal has an earlier
+reduced-fraction proof by West \cite{west}; the finite gcd formula is
+a specialization of Schramm \cite[theorem (i), (2), and Example 5]{schramm}.
+The rectangular identity follows from the same finite coprimality
+expansion. A400203's formulas and the three triangle specializations
+below were recorded by Morken on 21 September 2026 in its history,
+revisions 2 and 4 \cite{a400203}; 1 October dates the later revision-17
+snapshot, not their first entry. The two corrected source conventions
+are stated precisely in Corollaries~\ref{cor:signed} and \ref{cor:counts}.
+
+\section{The two identities}
+Write $\mob$ for the integer-valued M\"obius function, with $\mob(1)=1$;
+thus $\mob(r)=0$ when a prime square divides $r$, and otherwise
+$\mob(r)=(-1)^s$ when $r$ has $s$ distinct prime factors \cite{a008683}.
+For integers $n\geq1$ and $X\geq0$, define
+\[
+ \C_n(X)=\sum_{\substack{1\leq k\leq X\\(k,n)=1}}\mob(k),
+ \qquad M(X)=\sum_{1\leq k\leq X}\mob(k),
+ \qquad \rad(n)=\prod_{p\mid n}p.
+\]
+Here $(k,n)$ denotes the greatest common divisor, $\rad(1)=1$, and empty
+sums are zero. The functions $M$ and $\rad$ are OEIS A002321 and A007947
+\cite{a002321,a007947}. The sequence A112399 is $a(n)=\C_n(n)$.
+Its two conjectures assert the $X=n$ cases of the following theorem.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\geq1$ and every integer $X\geq0$,
+\begin{align}
+ \C_n(X)
+ &=\sum_{\substack{d\mid n\\\mob(d)\ne0}}
+       \C_d(\lfloor X/d\rfloor),\label{eq:first}\\
+ \C_n(X)
+ &=\sum_{\substack{1\leq q\leq X\\\rad(q)\mid n}}
+       M(\lfloor X/q\rfloor).\label{eq:second}
+\end{align}
+All divisors and summation indices are positive.
+\end{theorem}
+
+The condition $\mob(d)\ne0$ restricts the outer divisor, not $n$ itself.
+In \eqref{eq:first}, the inner sum uses $(m,d)=1$, whereas the left side
+uses $(k,n)=1$. In \eqref{eq:second}, $\rad(q)\mid n$ allows arbitrary
+powers of primes dividing $n$; it does not require $q\mid n$.
+
+\begin{proof}
+We first record the pointwise identity, for positive $d,m$,
+\begin{equation}\label{eq:pointwise}
+ \mob(d)\mob(dm)=
+ \begin{cases}
+   \mob(m),&\mob(d)\ne0\text{ and }(m,d)=1,\\
+   0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+If $\mob(d)=0$, the left side vanishes. Otherwise $d$ is squarefree.
+When $(m,d)=1$, multiplicativity gives
+$\mob(dm)=\mob(d)\mob(m)$ and $\mob(d)^2=1$.
+When $(m,d)>1$, a common prime has its square dividing $dm$, so
+$\mob(dm)=0$. This proves \eqref{eq:pointwise} in all cases.
+
+Apply \eqref{eq:pointwise}, put $k=dm$, and exchange finite sums:
+\begin{align*}
+ \sum_{\substack{d\mid n\\\mob(d)\ne0}}
+       \C_d(\lfloor X/d\rfloor)
+ &=\sum_{d\mid n}\mob(d)\sum_{1\leq m\leq X/d}\mob(dm)\\
+ &=\sum_{1\leq k\leq X}\mob(k)
+        \sum_{d\mid(k,n)}\mob(d).
+\end{align*}
+For any positive $g$, the inner divisor sum equals
+$\prod_{p\mid g}(1-1)$: it is $1$ if $g=1$ and $0$ otherwise.
+The last display therefore equals $\C_n(X)$, proving \eqref{eq:first}.
+The reindexing uses $m\leq\lfloor X/d\rfloor$ if and only if $dm\leq X$,
+so it also covers $d>X$ and $X=0$.
+
+For \eqref{eq:second}, define $h_n(q)=1$ when $\rad(q)\mid n$ and
+$h_n(q)=0$ otherwise. For every positive integer $r$ we claim
+\begin{equation}\label{eq:convolution}
+ \sum_{q\mid r}h_n(q)\mob(r/q)
+   =\begin{cases}\mob(r),&(r,n)=1,\\0,&(r,n)>1.\end{cases}
+\end{equation}
+To check this, factor the divisor sum prime by prime. If $p^a\Vert r$
+and $p\nmid n$, only exponent zero is allowed in $q$, so the local
+factor is $\mob(p^a)$. If $p\mid n$, every exponent $0\leq j\leq a$
+is allowed, and the local factor is
+\[
+ \sum_{j=0}^{a}\mob(p^{a-j})=1-1=0\qquad(a\geq1).
+\]
+For $r=1$ the empty product is $1$. These observations give
+\eqref{eq:convolution}. Summing it for $1\leq r\leq X$ and putting
+$r=qk$ yields
+\[
+ \C_n(X)=\sum_{1\leq r\leq X}\sum_{q\mid r}h_n(q)\mob(r/q)
+ =\sum_{1\leq q\leq X}h_n(q)
+       \sum_{1\leq k\leq\lfloor X/q\rfloor}\mob(k),
+\]
+which is \eqref{eq:second}.
+\end{proof}
+
+For example, $a(10)=-1$. In \eqref{eq:first}, the contributions from
+$d=1,2,5,10$ are respectively $M(10)=-1$, $\C_2(5)=-1$,
+$\C_5(2)=0$, and $\C_{10}(1)=1$. In \eqref{eq:second}, the allowed
+$q\leq10$ are $1,2,4,5,8,10$, giving $-1,-2,0,0,1,1$.
+For $n=1$, both formulas reduce to $M(X)$; for $X=0$, both are empty.
+
+\section{Product and quadratic identities}
+\begin{corollary}[Product formula; Bala's weighted identity]\label{cor:product}
+For a multiplicative arithmetic function $f$, $n\geq1$ and $X\geq0$,
+\[
+ \sum_{k=1}^{X}\mob(nk)f(nk)
+ =\mob(n)f(n)\sum_{\substack{k\leq X\\(k,n)=1}}\mob(k)f(k).
+\]
+In particular,
+\begin{equation}\label{eq:product}
+ \sum_{1\leq k\leq X}\mob(nk)=\mob(n)\C_n(X).
+\end{equation}
+\end{corollary}
+\begin{proof}
+For squarefree $n$ the terms with $(k,n)>1$ vanish and the others
+factor by multiplicativity. For nonsquarefree $n$, both sides vanish.
+\end{proof}
+The $X=n$ instance is Morken's conjecture in A372706 \cite{a372706}.
+Peter Bala proved it on 22 September 2026; his Proposition~1 also allows
+a multiplicative weight $f(nk)$ \cite{bala}. Equation \eqref{eq:product}
+is its arbitrary-cutoff specialization. Among the primary proofs located,
+Bala's dated proof is the earliest for this product statement; the two
+A112399 identities concern different divisor sums.
+
+\begin{corollary}[Rectangular quadratic identity]\label{cor:quadratic}
+For integers $X,Y\geq0$,
+\begin{equation}\label{eq:rectangle}
+ \sum_{j=1}^{X}\sum_{k=1}^{Y}\mob(jk)
+ =\sum_{d=1}^{\min(X,Y)}\mob(d)
+   \C_d(\lfloor X/d\rfloor)\C_d(\lfloor Y/d\rfloor).
+\end{equation}
+Thus, for $T(N)=\sum_{j,k=1}^{N}\mob(jk)$ (A372700 \cite{a372700}),
+\begin{equation}\label{eq:quadratic}
+ T(N)=\sum_{d=1}^{N}\mob(d)\C_d(\lfloor N/d\rfloor)^2
+ \qquad(N\geq1).
+\end{equation}
+\end{corollary}
+\begin{proof}
+For positive $d,x,y$,
+\[
+ \mob(d)\mob(x)\mob(y)\mathbf1_{(x,d)=(y,d)=1}
+       =\mob(d)\mob(dx)\mob(dy).
+\]
+If $d$ is nonsquarefree, both sides vanish; otherwise use
+multiplicativity when both coprimality conditions hold, and squarefree
+vanishing when either fails. Expanding the right side of
+\eqref{eq:rectangle} and setting $j=dx$, $k=dy$ gives
+\[
+ \sum_{\substack{j\leq X\\k\leq Y}}\mob(j)\mob(k)
+       \sum_{d\mid(j,k)}\mob(d)
+   =\sum_{\substack{j\leq X,\ k\leq Y\\(j,k)=1}}\mob(j)\mob(k)
+   =\sum_{\substack{j\leq X\\k\leq Y}}\mob(jk).
+\]
+The last equality again uses squarefree vanishing for noncoprime $j,k$.
+Setting $X=Y=N$ proves Morken's quadratic formula.
+\end{proof}
+
+\begin{corollary}[Row sum and plateaux]\label{cor:row}
+For $N\geq1$,
+\begin{equation}\label{eq:row}
+ T(N)=-1+2\sum_{k=1}^{N}\mob(k)a(k).
+\end{equation}
+In particular $T(N)=T(N-1)$ when $N$ is nonsquarefree.
+\end{corollary}
+\begin{proof}
+$T(1)=1$. For $N>1$, the last row and column give
+$T(N)-T(N-1)=2\sum_{k=1}^{N}\mob(Nk)-\mob(N^2)
+=2\mob(N)a(N)$, by Corollary~\ref{cor:product} and $\mob(N^2)=0$.
+Summation gives \eqref{eq:row}, including its initial value.
+\end{proof}
+The A372700 conjecture of infinitely many sign changes is not covered.
+
+\begin{corollary}[All finite formulas of A400203]\label{cor:triangle}
+Let $U(N,d)=\C_d(\lfloor N/d\rfloor)$ for $1\leq d\leq N$,
+the triangle A400203, revision 17, FORMULA \cite{a400203}.
+Then
+\begin{equation}\label{eq:triangle-mertens}
+ U(N,d)=\sum_{\substack{q\leq N/d\\\rad(q)\mid d}}
+                  M(\lfloor N/(dq)\rfloor).
+\end{equation}
+Its boundary and plateau formulas are
+\[
+ U(N,1)=M(N),\quad U(N,d)=1\ (2d>N),\quad
+ U(N,d)=U(d\lfloor N/d\rfloor,d).
+\]
+For $1\leq d<N$, its increment is $\mob(N/d)$ when
+$d\mid N$ and $(N/d,d)=1$, and zero otherwise.
+Writing $H(k)=1$ if every prime exponent of $k$ is at least two,
+and $H(k)=0$ otherwise, with $H(1)=1$, gives
+\begin{align}
+ \sum_{d=1}^{N}U(N,d)&=\sum_{k=1}^{N}H(k)
+                         =\mathrm{A217038}(N+1),\label{eq:triangle-row}\\
+ \sum_{d=1}^{N}\mob(d)U(N,d)&=\sum_{k=1}^{N}\mob(k)\tau(k)
+                         =\mathrm{A062563}(N),\label{eq:triangle-mu}\\
+ \sum_{d=1}^{N}\mob(d)^2U(N,d)&=1.\label{eq:triangle-square}
+\end{align}
+Here $H$ is A112526, $\tau(k)$ is the number of positive divisors,
+and A217038 counts powerful numbers strictly below its argument
+\cite{triangle-aux}.
+\end{corollary}
+\begin{proof}
+Equation \eqref{eq:triangle-mertens} is \eqref{eq:second} with parameter
+$d$ and cutoff $\lfloor N/d\rfloor$, using
+$\lfloor\lfloor N/d\rfloor/q\rfloor=\lfloor N/(dq)\rfloor$.
+The boundary, plateau and increment formulas follow by considering
+whether $\lfloor N/d\rfloor$ changes and whether its new endpoint is
+coprime to $d$. In particular $U(N,N)=1$.
+
+Reindex each row by $k=dx$. For \eqref{eq:triangle-row}, its coefficient
+at $k$ is $\sum_{x\mid k,(x,k/x)=1}\mob(x)$. At a prime power $p^e$
+the two choices $x=1,p^e$ give $1+\mob(p^e)$: zero for $e=1$ and
+one for $e\geq2$. The product is $H(k)$.
+For \eqref{eq:triangle-mu} the coefficient is
+$\sum_{dx=k,(d,x)=1}\mob(d)\mob(x)$. It is zero if $k$ is
+nonsquarefree, and otherwise every divisor contributes $\mob(k)$,
+giving $\mob(k)\tau(k)$; equivalently it is $\mob(k)2^{\omega(k)}$.
+For \eqref{eq:triangle-square}, the local factor of
+$\sum_{dx=k,(d,x)=1}\mob(d)^2\mob(x)$ is
+$\mob(p^e)+\mob(p^e)^2=0$ for every $e\geq1$.
+Thus only $k=1$ contributes, with coefficient one.
+\end{proof}
+The prime-supported formula \eqref{eq:triangle-mertens} is already recorded
+in A400203, revision 17 (1 October 2026); Theorem~\ref{thm:main} supplies
+its cancellation proof. Taking $N=dX$ recovers any nonnegative cutoff.
+
+\begin{corollary}[A112526's signed-variant convention]\label{cor:signed}
+With the powerful-number indicator $H$ above,
+$H(n)\mob(n)=\mathbf1_{n=1}$.
+The multiplicative function with prime-power values zero for exponent
+one and $-1$ for larger exponents is instead $H(n)\mob(\rad(n))$.
+\end{corollary}
+\begin{proof}
+Every powerful $n>1$ is nonsquarefree, so $\mob(n)=0$.
+For the second assertion, evaluate at $p^e$ and use multiplicativity.
+This corrects the pointwise-product description of the signed variant
+in A112526, COMMENT \cite{triangle-aux}.
+\end{proof}
+
+\section{Divisor grouping and further siblings}
+\begin{corollary}[A general finite transform]\label{cor:group}
+Let $F$ be any complex-valued function on positive integers. For $n\geq1$
+and $X\geq0$,
+\begin{equation}\label{eq:group}
+ \sum_{k=1}^{X}F\!\left(\frac{k}{(k,n)}\right)
+ =\sum_{d\mid n}\ \sum_{\substack{1\leq m\leq\lfloor Xd/n\rfloor\\(m,d)=1}}F(m).
+\end{equation}
+In particular, if $A_F(d)=\sum_{m\leq d,(m,d)=1}F(m)$ and
+$B_F(n)=\sum_{k\leq n}F(k/(k,n))$, then
+\begin{equation}\label{eq:general-transform}
+ B_F(n)=\sum_{d\mid n}A_F(d),\qquad
+ A_F(n)=\sum_{d\mid n}\mob(n/d)B_F(d).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Group by $g=(k,n)$, put $d=n/g$ and $k=gm$.
+Then $(m,d)=1$, and $k\leq X$ is equivalent to
+$m\leq\lfloor Xd/n\rfloor$. This is a bijection in both directions,
+proving \eqref{eq:group}. For $X=n$ it gives the first transform;
+substitution and $\sum_{e\mid t}\mob(e)=\mathbf1_{t=1}$ give its inverse.
+\end{proof}
+
+\begin{corollary}[A332685 and the A112399 transform]\label{cor:transform}
+For $b(n)=\sum_{k\leq n}\mob(k/(k,n))$ (A332685 \cite{a332685}),
+\begin{equation}\label{eq:transform}
+ b(n)=\sum_{d\mid n}a(d),\qquad
+ a(n)=\sum_{d\mid n}\mob(n/d)b(d).
+\end{equation}
+Also $b(n)=\sum_{k\leq n}\mob(\operatorname{lcm}(n,k)/n)$.
+\end{corollary}
+\begin{proof}
+Take $F=\mob$ in Corollary~\ref{cor:group}; use
+$\operatorname{lcm}(n,k)/n=k/(k,n)$ for the last expression.
+\end{proof}
+The inverse formula is credited to Amiram Eldar in A112399;
+the forward formula and lcm expression are recorded in A332685.
+
+\begin{corollary}[Squarefree counts and the A304575 endpoint]\label{cor:counts}
+Write $s(d)=\sum_{k\leq d,(k,d)=1}\mob(k)^2$ (A073311 \cite{a073311}).
+The formulas and data of A304575 \cite{a304575} give the sequence
+\begin{equation}\label{eq:counts}
+ R(n)=\sum_{d\mid n}s(d)
+ =\sum_{k=1}^{n}\mob\!\left(\frac{k}{(k,n)}\right)^2
+ =\sum_{k=1}^{n}\mob\!\left(\frac{\operatorname{lcm}(n,k)}{n}\right)^2.
+\end{equation}
+Consequently $R(n)\leq n$ and
+$s(n)=\sum_{d\mid n}\mob(n/d)R(d)$.
+If the strict inequality $k<d$ in that entry's NAME is read literally
+for positive $k$, its divisor sum equals $R(n)-1$, not $R(n)$.
+For $Q(t)=\sum_{1\leq k<t}\mob(k)^2$ (A013928 \cite{a013928}),
+every prime $p$ and integer $m\geq0$ satisfy
+\begin{align}
+ R(p^{2m})&=1+\sum_{i=0}^{m}Q(p^{2i}),\label{eq:even}\\
+ R(p^{2m+1})&=1+\sum_{i=0}^{m}Q(p^{2i+1}).\label{eq:odd}
+\end{align}
+\end{corollary}
+\begin{proof}
+Apply Corollary~\ref{cor:group} with $F=\mob^2$, and use the lcm
+identity. Each summand in the middle expression of \eqref{eq:counts}
+is zero or one, so $R(n)\leq n$.
+For $d>1$ the endpoint $k=d$ is not coprime to $d$; for $d=1$ it
+contributes one. Every divisor sum therefore differs by exactly one
+under the strict convention. In particular the literal NAME gives zero
+at $n=1$, whereas the entry's data and formulas give $R(1)=1$.
+
+Put $D_j=s(p^j)$, with $D_0=1$ and $D_1=Q(p)$.
+For $j\geq2$, a squarefree integer below $p^j$ either avoids $p$
+(there are $D_j$ such integers) or equals $p\ell$, where $\ell<p^{j-1}$
+is squarefree and avoids $p$ (there are $D_{j-1}$).
+Thus $D_j+D_{j-1}=Q(p^j)$. Pair consecutive terms in
+$R(p^e)=\sum_{j=0}^{e}D_j$; the unpaired terms are $D_0=1$
+for even $e$, and $D_0+D_1=1+Q(p)$ for odd $e$.
+This gives \eqref{eq:even}--\eqref{eq:odd}, also at $m=0$ since $Q(1)=0$.
+\end{proof}
+The inclusive convention in \eqref{eq:counts} agrees with A073311 and
+with A304575's formulas and programs. Only the strict-endpoint wording
+of its NAME requires correction.
+
+\begin{corollary}[Other finite gcd sums]\label{cor:gcd}
+For $n\geq1$ and any arithmetic function $F$,
+\begin{align}
+ \sum_{k=1}^{n}F((k,n))&=\sum_{d\mid n}F(d)\varphi(n/d),\label{eq:gcd}\\
+ \sum_{k=1}^{n}F(n/(k,n))&=\sum_{d\mid n}F(d)\varphi(d).\label{eq:quotient}
+\end{align}
+Thus the finite gcd formulas of A007431, A063659 and A276833
+\cite{a007431,a063659,a276833} follow, with local factors
+\begin{align*}
+ \mathrm{A007431}(p^e)&=
+ \begin{cases}p-2,&e=1,\\p^{e-2}(p-1)^2,&e\geq2,\end{cases}\\
+ \mathrm{A063659}(p^e)&=
+ \begin{cases}p,&e=1,\\p^e-p^{e-2},&e\geq2,\end{cases}
+ \qquad
+ \mathrm{A276833}(n)=\prod_{p\mid n}(2-p).
+\end{align*}
+In addition $\sum_{d\mid n}\mathrm{A007431}(d)=\varphi(n)$.
+\end{corollary}
+\begin{proof}
+There are $\varphi(n/d)$ integers $k\leq n$ with $(k,n)=d$,
+proving \eqref{eq:gcd}; replacing $d$ by $n/d$ proves
+\eqref{eq:quotient}. Taking $F=\mob$ or $F=\mob^2$ gives the first two
+sequences. Their prime-power values are respectively
+$\varphi(p^e)-\varphi(p^{e-1})$ and
+$\varphi(p^e)+\varphi(p^{e-1})$; use $\varphi(1)=1$.
+For A276833 take $F=\mob$ in \eqref{eq:quotient} and use
+$\operatorname{lcm}(k,n)/k=n/(k,n)$. Factoring its divisor sum yields
+$\prod_{p\mid n}(1-\varphi(p))$. All three divisor sums are
+multiplicative, since their factors are multiplicative.
+Finally, summing $\sum_{d\mid n}\mob(d)\varphi(n/d)$ over divisors
+cancels all but $\varphi(n)$.
+\end{proof}
+
+\begin{corollary}[Three recorded triangle specializations]\label{cor:triangle-special}
+For every $n\geq1$, with $U$ as in Corollary~\ref{cor:triangle},
+\[
+ a(n)=U(n^2,n)
+ =\sum_{\substack{d\mid n\\\mob(d)\ne0}}U(n,d),
+ \qquad
+ \mathrm{A372706}(n)=\mob(n)U(n^2,n).
+\]
+These are the three formulas in A400203's history, revision 4,
+21 September 2026 \cite{a400203}.
+\end{corollary}
+\begin{proof}
+The first equality uses $\lfloor n^2/n\rfloor=n$ in the definition of $U$.
+The divisor sum is \eqref{eq:first} with $X=n$.
+The product relation is \eqref{eq:product} with $X=n$.
+\end{proof}
+
+\section{Coverage and verification}
+Table~\ref{tab:coverage} separates the posed identities, nearby finite
+formulas, and analytic questions. The arbitrary-function transform and
+rectangular identity are written generalizations of the same cancellation.
+
+\small
+\begin{longtable}{@{}p{0.37\linewidth}p{0.57\linewidth}@{}}
+\caption{Source statements and mathematical coverage.}\label{tab:coverage}\\
+\toprule
+Source item & Coverage\\
+\midrule
+\endfirsthead
+\toprule Source item & Coverage\\ \midrule
+\endhead
+\bottomrule\endfoot
+A112399, rev. 41, FORMULA, first conjecture &
+Reproved; prior proof Sander--Sander (2009), (5)--(7), specialized;
+Ramar\'e (2014), \S1, in equivalent reciprocal-weight form.
+Equation~\eqref{eq:first} gives the cutoff form.\\
+A112399, rev. 41, FORMULA, second conjecture &
+Reproved; prior proof Ramar\'e (electronically 2014; print 2015),
+(16.1), reindexed. Coefficient proofs: Ingix/reuns and Helfgott (2019);
+later general statements in the March and October 2026 papers.\\
+A112399 transform; A332685 transform and lcm formulas &
+Reproved; prior proof West (2013), by reduced fractions;
+specific formulas recorded in the entries. Corollary~\ref{cor:group}
+also states the independent-cutoff form.\\
+A372706 product conjecture and nonsquarefree case &
+Reproved; prior proof Bala (2026), Proposition~1;
+\eqref{eq:product} gives the unweighted formula for arbitrary $X$.\\
+A372700, rev. 44, FORMULA, quadratic, row, plateau &
+Reproved from the prior finite expansion of Sander--Sander (2009);
+the square formula was recorded by Morken (2026), the row/plateau
+formulas by Manyama (2024). The rectangular form is \eqref{eq:rectangle}.\\
+A372700, rev. 44, COMMENT, infinitely many sign changes &
+Not covered.\\
+A400203, rev. 17, FORMULA, all ten finite identities &
+Proved: Corollary~\ref{cor:triangle}; formulas recorded by Morken
+on 21 September 2026, history revisions 2 and 4.\\
+A400203, history rev. 4, three additional formulas &
+Proved: Corollary~\ref{cor:triangle-special}; recorded by Morken
+on 21 September 2026.\\
+A112526, COMMENT, signed-variant pointwise product &
+Refuted-and-corrected: Corollary~\ref{cor:signed}; the stated local
+values require $H(n)\mob(\rad(n))$, not $H(n)\mob(n)$.\\
+A073311, FORMULA, A304575 inverse transform &
+Reproved; prior general proof West (2013), with $F=\mob^2$;
+specific inverse recorded by Oudra (2025).\\
+A304575, rev. 19, FORMULA and COMMENT, sums, prime powers, bound &
+Reproved: general transform West (2013); specific formulas recorded
+by Eldar (2024), Oudra (2025), and the bound by Wiseman (2018).
+Equations~\eqref{eq:counts}--\eqref{eq:odd} give the derivations.\\
+A304575, rev. 19, NAME, literal strict endpoint &
+Refuted-and-corrected: its strict divisor sum is $R(n)-1$;
+the inclusive version matches the data.\\
+A007431, $\sum\mob((k,n))$, divisor and prime-power formulas &
+Reproved; prior general proof Schramm (2008), theorem (i), $m=0$;
+specific formulas credited in the entry.\\
+A063659, $\sum\mob((k,n))^2$, $\mob^2*\varphi$ and prime-power formulas &
+Reproved; prior general proof Schramm (2008), theorem (i), $m=0$;
+specific formulas credited in the entry.\\
+A276833, divisor/lcm sums and product formula &
+Reproved; prior general proof Schramm (2008), after divisor relabeling;
+specific formulas credited in the entry.\\
+A013929, nonsquarefree interpretation used in A372700/A372706 &
+Proved: $\mob(n)=0$ is equivalent to nonsquarefreeness.\\
+A002321/A008683/A007947 and other auxiliary entries: unrelated
+analytic, Fourier, group-theoretic and enumerative assertions &
+Not covered; only their defining conventions and the finite formulas
+specified above enter the argument.\\
+\end{longtable}
+\normalsize
+
+\paragraph{Lean declaration.}
+The pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean}{\texttt{MorkenFirstDivisorSum.lean}}
+contains the declaration
+\nolinkurl{D5.S3.Arith.MoebiusLogarithmic.MorkenFirstDivisorSum.result},
+whose statement and proof are
+\eqref{eq:first} with $X=n>0$.
+Its natural-number closed intervals, integer M\"obius values,
+squarefree-divisor filter, and inner coprimality condition agree with the
+definitions above. At the same revision,
+\href{https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.lean}{\texttt{CoprimeConvolution.lean}}
+contains
+\nolinkurl{D5.S3.Arith.MoebiusLogarithmic.sum_supported_moebius},
+which proves the coefficient identity
+\eqref{eq:convolution}. Its predicate \texttt{PrimeSupported} says that
+every prime divisor of the index divides the parameter; on positive
+indices this is precisely $\rad(q)\mid n$.
+The finite summation yielding \eqref{eq:second}, the arbitrary-cutoff
+extension in \eqref{eq:first}, and the related identities have the written
+proofs given here.
+
+\paragraph{Finite checks.}
+The integer-arithmetic checker \texttt{verify.py} compares two
+M\"obius implementations and tests the formulas against direct sums for
+$1\leq n\leq400$, both cutoff identities and \eqref{eq:product} for
+$1\leq n\leq60$, $0\leq X\leq120$, and
+\eqref{eq:quadratic}--\eqref{eq:row} for $1\leq N\leq120$.
+It also checks \eqref{eq:rectangle} for $0\leq X,Y\leq40$,
+the new finite transform and gcd formulas for $1\leq n\leq200$,
+and every prime power at most $200$ in \eqref{eq:even}--\eqref{eq:odd}.
+The strict-endpoint discrepancy is checked for every $n\leq200$.
+All triangle identities are checked through $N=160$ and the
+signed-variant correction through $n=200$.
+The all-input justification is the written proof.
+
+\paragraph{License.} CC BY 4.0 (Creative Commons Attribution 4.0 International).
+
+\clearpage
+\begin{thebibliography}{99}
+\small
+\setlength{\itemsep}{0pt}
+\bibitem{a112399} The OEIS Foundation Inc.,
+\emph{A112399: Coprime M\"obius sum}, revision 41,
+19 September 2026, FORMULA section; conjectures contributed by
+Jamie Morken, 18 September 2026.
+\url{https://oeis.org/A112399/internal}.
+\bibitem{a008683} The OEIS Foundation Inc.,
+\emph{A008683: M\"obius function}.
+\url{https://oeis.org/A008683}.
+\bibitem{a002321} The OEIS Foundation Inc.,
+\emph{A002321: Mertens's function}.
+\url{https://oeis.org/A002321}.
+\bibitem{a007947} The OEIS Foundation Inc.,
+\emph{A007947: Squarefree kernel}.
+\url{https://oeis.org/A007947}.
+\bibitem{a372706} The OEIS Foundation Inc.,
+\emph{A372706: Sum of $\mob(nk)$ for $1\leq k\leq n$}, revision 31,
+22 September 2026, FORMULA section.
+\url{https://oeis.org/A372706/internal}.
+\bibitem{bala} P. Bala,
+\emph{Proof of a conjecture in A372706}, 22 September 2026,
+Proposition 1.
+\url{https://oeis.org/A372706/a372706.pdf}.
+\bibitem{a332685} The OEIS Foundation Inc.,
+\emph{A332685: Sum of $\mob(k/\gcd(n,k))$ for $1\leq k\leq n$},
+revision 15, 15 September 2026, NAME, COMMENT and FORMULA sections.
+\url{https://oeis.org/A332685/internal}.
+\bibitem{a372700} The OEIS Foundation Inc.,
+\emph{A372700: Double sum of $\mob(jk)$}, revision 44,
+24 September 2026, FORMULA and COMMENT sections.
+\url{https://oeis.org/A372700/internal}.
+\bibitem{a073311} The OEIS Foundation Inc.,
+\emph{A073311: Squarefree numbers in the reduced residue system},
+COMMENT and FORMULA sections.
+\url{https://oeis.org/A073311/internal}.
+\bibitem{a304575} The OEIS Foundation Inc.,
+\emph{A304575}, revision 19, 22 October 2025, NAME, COMMENT,
+FORMULA and PROGRAM sections; formulas by Amiram Eldar and Ridouane Oudra.
+\url{https://oeis.org/A304575/internal}.
+\bibitem{a013928} The OEIS Foundation Inc.,
+\emph{A013928: Number of positive squarefree numbers $<n$},
+NAME and FORMULA sections.
+\url{https://oeis.org/A013928/internal}.
+\bibitem{a007431} The OEIS Foundation Inc.,
+\emph{A007431: $\sum_{d\mid n}\varphi(d)\mob(n/d)$},
+FORMULA section; finite gcd formula by Benoit Cloitre, 14 June 2007;
+prime-power formula by Vladeta Jovovic, 25 January 2002.
+\url{https://oeis.org/A007431/internal}.
+\bibitem{a063659} The OEIS Foundation Inc.,
+\emph{A063659: Squarefree gcd count}, FORMULA section;
+convolution and gcd formulas by Benoit Cloitre, 8 September 2002 and
+14 June 2007; prime-power formula by Vladeta Jovovic, 26 July 2001.
+\url{https://oeis.org/A063659/internal}.
+\bibitem{a276833} The OEIS Foundation Inc.,
+\emph{A276833: $\sum_{d\mid n}\mob(d)\varphi(d)$}, FORMULA section;
+product formula by Robert Ferreol, 14 March 2020, and lcm formula
+by Peter Bala, 16 January 2024.
+\url{https://oeis.org/A276833/internal}.
+\bibitem{a400203} The OEIS Foundation Inc.,
+\emph{A400203: Triangle of coprime M\"obius sums}, revision 17,
+1 October 2026, FORMULA section; entry contributed by Jamie Morken,
+21 September 2026.
+\url{https://oeis.org/A400203/internal}.
+\url{https://oeis.org/history?seq=A400203&start=10}.
+\bibitem{triangle-aux} The OEIS Foundation Inc.,
+\emph{A112526: Characteristic function for powerful numbers}, NAME,
+COMMENT and FORMULA;
+\emph{A217038: Number of powerful numbers $<n$}, NAME;
+\emph{A062563: $\sum_{k\leq n}\tau(k)\mob(k)$}, NAME and FORMULA.
+\url{https://oeis.org/A112526/internal};
+\url{https://oeis.org/A217038/internal};
+\url{https://oeis.org/A062563/internal}.
+\bibitem{sander} J. W. Sander and T. Sander,
+\emph{On the Kernel of the Coprime Graph of Integers},
+Integers 9 (2009), A43, 569--579; published 19 November 2009.
+Proof of Proposition 4, (5)--(7).
+\url{https://math.colgate.edu/~integers/j43/j43.pdf}.
+\bibitem{ramare2014} O. Ramar\'e,
+\emph{Explicit estimates on the summatory functions of the M\"obius function
+with coprimality restrictions}, Acta Arithmetica 165 (2014), 1--10,
+\S1, after (1.2). \url{https://doi.org/10.4064/aa165-1-1}.
+\url{https://ramare-olivier.github.io/Maths/mqdex-8.pdf}.
+\bibitem{ramare2015} O. Ramar\'e,
+\emph{Explicit estimates on several summatory functions involving the
+Moebius function}, Mathematics of Computation 84 (2015), 1359--1387,
+\S16, (16.1); electronically published 1 December 2014.
+\url{https://doi.org/10.1090/S0025-5718-2014-02914-1}.
+\url{https://ramare-olivier.github.io/Maths/mcom2914.pdf}.
+\bibitem{mse2019} Ingix and reuns, answers to
+\emph{Special sum of Moebius function}, Mathematics Stack Exchange,
+13 June 2019; reuns, revision 3, 21:12 UTC.
+\url{https://math.stackexchange.com/a/3261283}.
+\url{https://math.stackexchange.com/a/3261301}.
+\bibitem{helfgott} H. A. Helfgott,
+\emph{The ternary Goldbach problem}, manuscript, version listed
+16 December 2019, Part I, \S5.3.4, 138--139, (5.73).
+\url{https://webusers.imj-prg.fr/~harald.helfgott/anglais/book.html}.
+\url{https://webusers.imj-prg.fr/~harald.helfgott/anglais/PartI.pdf}.
+\bibitem{rz2026} O. Ramar\'e and S. Zuniga-Alterman,
+\emph{On a M\"obius double sum}, arXiv:2603.25961,
+v1, 26 March 2026; v2, 1 April; v3, 1 July, Lemma 2.5.
+\url{https://arxiv.org/abs/2603.25961v3}.
+\bibitem{z2026} S. Zuniga-Alterman,
+\emph{A recurrence in logarithmic M\"obius sums with coprimality conditions
+via Euler--Maclaurin}, arXiv:2610.17720,
+v1, 13 October 2026; v2, 26 October, Lemma 7.1.
+\url{https://arxiv.org/abs/2610.17720v2}.
+\bibitem{west} B. West, answer to
+\emph{Sum of primitive roots is congruent to $\mu(p-1)$ using Moebius inversion?},
+Mathematics Stack Exchange, 1 January 2013, 23:07 UTC;
+opening reduced-fraction identity and its proof.
+\url{https://math.stackexchange.com/a/268866}.
+\bibitem{schramm} W. Schramm,
+\emph{The Fourier Transform of Functions of the Greatest Common Divisor},
+Integers 8 (2008), A50; published 24 November 2008,
+theorem (i), (2), and Example 5.
+\url{https://math.colgate.edu/~integers/i50/i50.pdf}.
+\end{thebibliography}
+\end{document}
