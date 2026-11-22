@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24405798",
     "current_version": 3,
-    "doi": null,
+    "doi": "10.5281/zenodo.24405799",
     "lean_source": {
       "revision": "4a11a6467d4ba3682c7630cd22c551cd11074cc6",
       "url": "https://github.com/the-omega-institute/trureturing/blob/4a11a6467d4ba3682c7630cd22c551cd11074cc6/D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.lean"
