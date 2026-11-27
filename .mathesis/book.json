@@ -1,0 +1,131 @@
+{
+  "book": "oeis-a112399-morken-first-divisor-sum",
+  "pending_claims": [],
+  "results": {
+    "cor-counts": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s9",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "cor-finite-transform": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s7",
+      "compared_public_gid": "D5/S0/Carrier/ArithmeticFunctions/PowerfulDivisorTransform.powerfulDivisorSum_eq_inverseMoebius",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "formalization_request": {
+        "label": "Finite reduced-fraction divisor grouping",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/544"
+      },
+      "gids": []
+    },
+    "cor-gcd": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s10",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "cor-mobius-transform": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s8",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "cor-product": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s2",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "cor-rectangle": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s3",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "formalization_request": {
+        "label": "Rectangular quadratic Möbius identity",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/543"
+      },
+      "gids": []
+    },
+    "cor-row": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s4",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "cor-signed": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s6",
+      "compared_public_gid": "D5/S0/Carrier/ArithmeticFunctions/PowerfulDivisorTransform.powerfulDivisorSum_eq_inverseMoebius",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "gids": []
+    },
+    "cor-triangle": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s5",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.sum_supported_moebius",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "gids": []
+    },
+    "cor-triangle-special": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s11",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "special case",
+      "gids": []
+    },
+    "lem-supported-coefficient": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s1",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.sum_supported_moebius",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "same",
+      "gids": [
+        "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.sum_supported_moebius"
+      ]
+    },
+    "thm-first-cutoff": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s1",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "special case",
+      "formalization_request": {
+        "label": "Morken’s squarefree-divisor sum with an independent cutoff",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/541"
+      },
+      "gids": []
+    },
+    "thm-first-diagonal": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s1",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "same",
+      "gids": [
+        "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result"
+      ]
+    },
+    "thm-supported-cutoff": {
+      "claim": "collected:oeis-a112399-morken-first-divisor-sum:3:s1",
+      "compared_public_gid": "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.sum_supported_moebius",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "formalization_request": {
+        "label": "Prime-supported finite Mertens reindexing",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/542"
+      },
+      "gids": []
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)",
+    "zh": "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"
+  },
+  "version": 3,
+  "work": "oeis-a112399-morken-first-divisor-sum"
+}

@@ -1,0 +1,17 @@
+[book]
+version = "3"
+authors = ["Haobo Ma", "Wenlin Zhang"]
+license = "CC-BY-4.0"
+editions = ["zh", "en"]
+date = "2026-11-22"
+[book.title]
+zh = "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"
+en = "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"
+[outputs]
+html = true
+pdf = ["academic"]
+epub = true
+[mathesis]
+work = "oeis-a112399-morken-first-divisor-sum"
+version = 3
+source_title = "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"

@@ -1,0 +1,27 @@
+{
+  "duration": "1:17",
+  "id": "001-two-cancellations",
+  "lean": [],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "oeis-a112399-morken-first-divisor-sum_001_cover.jpg",
+    "narrated_720p": "oeis-a112399-morken-first-divisor-sum_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-23",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://github.com/the-omega-institute/trureturing",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "Score the numbers coprime to ten, then see why two different finite sums give the same answer.",
+  "summary_zh": "给与 10 互素的数计分，理解两个不同的有限和式为何得到同一结果。",
+  "title": "Two ways to cancel",
+  "title_zh": "两种消去法"
+}

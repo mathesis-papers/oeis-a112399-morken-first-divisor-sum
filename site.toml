@@ -1,0 +1,14 @@
+[site]
+repo = "mathesis-papers/oeis-a112399-morken-first-divisor-sum"
+base_url = "https://papers.trureturing.org/oeis-a112399-morken-first-divisor-sum/"
+post_build = ["python3", "-c", "from pathlib import Path\nimport runpy\nscript = Path(\"docs/layer-mathesis/scripts/site.py\")\nif script.is_file():\n    runpy.run_path(str(script), run_name=\"__main__\")\nelse:\n    print(\"Mathesis post-build skipped: layer script is absent from repository being built\")\n"]
+languages = ["zh", "en"]
+[site.title]
+zh = "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"
+en = "Convention corrections and alternative proofs for Morken's conjectures in OEIS A112399: Revision 41, FORMULA; after Sander–Sander (2009) and Ramaré (2014–2015)"
+[trureturing]
+repo = "the-omega-institute/trureturing"
+branch = "dev"
+[books]
+order = ["oeis-a112399-morken-first-divisor-sum"]
+hide = []

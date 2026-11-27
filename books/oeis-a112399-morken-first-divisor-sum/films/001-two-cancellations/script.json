@@ -1,0 +1,20 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "say": {"Möbius": "Merbius"},
+  "music": {"bpm": 80, "progression": "a-minor"},
+  "scenes": [
+    {"id":"sieve","name":"SCORE THE SURVIVORS","lead":1.0,"tail":0.6,"lines":[
+      ["Cross out the multiples of two or five from one through ten. One, three, seven and nine survive.","在 1 到 10 中划去 2 或 5 的倍数，只剩 1、3、7、9。"],
+      ["One scores plus one. Three and seven score minus one each. Nine contains a repeated prime, so it scores zero. The total is minus one.","1 得一分，3 和 7 各扣一分，9 有重复质因数，得零分。总分为负一。"]]},
+    {"id":"pair","name":"PAIR DIVISORS","lead":0.6,"tail":0.6,"lines":[
+      ["The first route combines shorter sums indexed by squarefree divisors of ten. At six, the eligible divisors of both six and ten are one and two.","第一条路将 10 的无平方因子的因数对应的短和相加。对下标 6，6 与 10 的公因数只有 1 和 2。"],
+      ["Their weights are plus one and minus one, so six cancels. At seven only the divisor one remains. That is how the sieve reappears.","它们的权重一正一负，6 因此被消去。对下标 7，只剩因数 1。筛选就这样重新出现。"]]},
+    {"id":"powers","name":"SPLIT PRIME POWERS","lead":0.6,"tail":0.6,"lines":[
+      ["The second route allows every power of an eligible prime. Four and eight are allowed even though neither divides ten.","第二条路允许使用符合条件的质数的所有幂。4 和 8 虽不整除 10，却都符合条件。"],
+      ["At eight, split off one, two, four or eight. The remaining factors are eight, four, two and one. Only the last two scores survive, and they cancel.","对 8，分出 1、2、4 或 8，余下的因数分别是 8、4、2、1。只有最后两个得分不为零，且正负相消。"]]},
+    {"id":"cutoff","name":"MOVE THE CUTOFF","lead":0.6,"tail":1.8,"lines":[
+      ["Both cancellations happen one term at a time. So the cutoff can be moved independently of the number used for the sieve.","两种消去都是逐项发生的。因此截点可以独立移动，不必等于筛选用的参数。"],
+      ["Jamie Morken asked about the diagonal. Ma and Zhang explain the two routes, building on earlier identities of Sander and Sander and Ramaré.","Jamie Morken 提出对角线情形。Ma 和 Zhang 在 Sander 与 Sander、Ramaré 的早期恒等式基础上解释了两条路线。"]]}
+  ]
+}

@@ -1,0 +1,9 @@
+kind = "academic"
+editions = ["en"]
+aspect = "4:3"
+structure_colour = "#0e2c8e"
+short_author = "Ma and Zhang (source)"
+short_title = "Morken’s coprime sums"
+
+[title]
+en = "Two ways to cancel: Morken’s coprime Möbius sums"

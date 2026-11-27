@@ -1,0 +1,25 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution.sum_supported_moebius": {
+      "module": "D5/S3/Arith/MoebiusLogarithmic/CoprimeConvolution",
+      "name": "D5.S3.Arith.MoebiusLogarithmic.sum_supported_moebius",
+      "kind": "theorem",
+      "statement_id": "sha256:b29d9389f8e4469bbef5cb5651732d2e2a11e69f125de18ff2a519cf2cdbb03a",
+      "line": 121,
+      "signature": "theorem sum_supported_moebius (q n : ℕ) : (∑ d ∈ n.divisors.filter (PrimeSupported q), ArithmeticFunction.moebius (n / d)) = if n.Coprime q then ArithmeticFunction.moebius n else 0"
+    },
+    "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum.result": {
+      "module": "D5/S3/Arith/MoebiusLogarithmic/MorkenFirstDivisorSum",
+      "name": "D5.S3.Arith.MoebiusLogarithmic.MorkenFirstDivisorSum.result",
+      "kind": "theorem",
+      "statement_id": "sha256:c0810a71e38a75dc5bfa2ca51d2498f5e803abc172f3bfccf33bbcd25d0196e0",
+      "line": 60,
+      "signature": "theorem result (n : ℕ) (hn : 0 < n) : (∑ k ∈ (Icc 1 n).filter (fun k => k.Coprime n), moebius k) = ∑ d ∈ n.divisors.filter (fun d => moebius d ≠ 0), ∑ m ∈ (Icc 1 (n / d)).filter (fun m => m.Coprime d), moebius m"
+    }
+  }
+}

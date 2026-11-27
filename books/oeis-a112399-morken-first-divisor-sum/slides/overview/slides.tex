@@ -1,0 +1,88 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Two ways to cancel: Morken's coprime Möbius sums}
+\author{Seminar exposition of Haobo Ma and Wenlin Zhang}
+\institute{}
+\date{Version 3 · DOI 10.5281/zenodo.24405799}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\ind}{\mathbf 1}
+\begin{document}
+% Manuscript: Earlier proofs and scope; Section 1.
+\begin{frame}
+  \titlepage
+  \note{Credit Jamie Morken for posing the two diagonal identities. This talk follows the accepted paper's finite proofs and does not claim priority over the earlier forms.}
+\end{frame}
+% Manuscript: Sections 1–3.
+\begin{frame}{Outline}
+  \tableofcontents
+  \note{Start with the scores for ten, then track the coefficient of one integer and reuse the same cancellation on a rectangle.}
+\end{frame}
+\section{Two finite identities}
+% Manuscript: Section 1, example following Theorem 1.
+\begin{frame}{What survives at ten?}
+  \[C_{10}(10)=\mu(1)+\mu(3)+\mu(7)+\mu(9)=-1.\]
+  \begin{tabular}{ll}
+    Squarefree divisors & $1,2,5,10$\\
+    Prime-supported indices & $1,2,4,5,8,10$
+  \end{tabular}
+  \note{Give a number score zero if it contains a repeated prime and otherwise score $(-1)^s$ for $s$ distinct primes. Four and eight do not divide ten, but both are permitted in the second list.}
+\end{frame}
+% Manuscript: Theorem 1, equations (1)–(2).
+\begin{frame}{The cutoff is independent of the sieve}
+  \small For $n\ge1$ and $X\ge0$, let $C_n(X)=\sum_{k\le X,\,(k,n)=1}\mu(k)$ and $M(X)=\sum_{k\le X}\mu(k)$ (positive indices).
+  \begin{align*}
+    C_n(X)&=\sum_{d\mid n,\,\mu(d)\ne0} C_d(\lfloor X/d\rfloor),\\
+    C_n(X)&=\sum_{q\le X,\,\rad(q)\mid n} M(\lfloor X/q\rfloor).
+  \end{align*}
+  \note{The first inner test is coprimality with $d$, not $n$. The second condition uses all powers of allowed primes. Both identities reduce to $M(X)$ at $n=1$ and to empty sums at $X=0$.}
+\end{frame}
+% Manuscript: Section 1, proof of Theorem 1, first identity.
+\begin{frame}{Route 1: pair divisors}
+  \[\sum_{d\mid n}\mu(d)\sum_{m\le X/d}\mu(dm)
+  =\sum_{k\le X}\mu(k)\sum_{d\mid(k,n)}\mu(d).\]
+  \[\sum_{d\mid(k,n)}\mu(d)=\ind_{(k,n)=1}.\]
+  \note{If $d$ is nonsquarefree the outer weight is zero; if $m$ and $d$ share a prime then $dm$ has a square factor. On the coprime terms, $\mu(d)^2=1$. A shared prime $p$ pairs every squarefree divisor missing $p$ with the divisor obtained by adjoining $p$.}
+\end{frame}
+% Manuscript: Section 1, proof of Theorem 1, second identity.
+\begin{frame}{Route 2: split each prime power}
+  \[\sum_{q\mid r,\,\rad(q)\mid n}\mu(r/q)=\ind_{(r,n)=1}\mu(r).\]
+  If $p^e\Vert r$ and $p\mid n$, the local sum is $1-1=0$.
+  Otherwise the local factor is $\mu(p^e)$.
+  \note{When all powers of $p$ are permitted in $q$, only the choices leaving zero or one copy in $r/q$ have nonzero weight. At $r=1$ the empty product is one. Sum over $r\le X$ and group by $q$.}
+\end{frame}
+\section{Consequences and scope}
+% Manuscript: Section 2, Rectangular quadratic identity and Row sum and plateaux.
+\begin{frame}{A signed sum of rectangles}
+  \small
+  \[\sum_{j\le X,\,k\le Y}\mu(jk)=
+    \sum_{d\le\min(X,Y)}\mu(d)C_d(\lfloor X/d\rfloor)C_d(\lfloor Y/d\rfloor).\]
+  Equal sides give a quadratic sum; adding a row and column explains plateaux.
+  \note{The divisor weight filters out pairs with a common prime. On the remaining pairs, $\mu(jk)=\mu(j)\mu(k)$. For $N>1$ the outer row and column give the increment $2\mu(N)a(N)$ because $\mu(N^2)=0$. This implies plateaux at nonsquarefree $N$, not infinitely many sign changes.}
+\end{frame}
+% Manuscript: Section 3, A304575 endpoint; Section 4, Lean declaration.
+\begin{frame}{Boundary conditions determine the statement}
+  \begin{itemize}
+    \item The strict A304575 endpoint drops exactly one term.
+    \item Lean covers the first identity at $X=n$ and the second route's pointwise coefficients.
+    \item The finite sums do not settle sign changes or asymptotics.
+  \end{itemize}
+  \note{The excluded endpoint $k=d$ was coprime only for $d=1$, which divides every $n$. For the second identity, distinguish the coefficient theorem at a fixed $r$ from the sum and reindexing through the independent cutoff $X$.}
+\end{frame}
+% Manuscript: Section 4, Lean declaration.
+\begin{frame}{What Lean states on the diagonal}
+  \begin{bookresult}{thm-first-diagonal}
+    For $n\ge1$, $C_n(n)=\sum_{d\mid n,\,\mu(d)\ne0} C_d(\lfloor n/d\rfloor)$.
+  \end{bookresult}
+  \note{This matches the frozen theorem, including the positive parameter and the closed intervals. It is not the result for all independent $X$.}
+\end{frame}
+% Manuscript: Earlier proofs and scope; bibliography.
+\begin{frame}{Credits}
+  Jamie Morken, OEIS A112399, revision 41.\\[0.5em]
+  Sander--Sander (2009); Ramaré (2014 and 2015); Helfgott (2019).\\[0.5em]
+  Ma and Zhang, version 3; Bala, West and Schramm for related formulas.
+  \note{Distinguish the conjectures' posing from earlier proofs of equivalent formulas. The first finite coprimality expansion specializes Sander--Sander; for the second, Ramaré's equation 16.1 can be reindexed.}
+\end{frame}
+\appendix
+% Manuscript: Section 4, formal coverage of the cited diagonal statement.
+\FormalVerification
+\end{document}
